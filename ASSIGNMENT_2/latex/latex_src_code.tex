@@ -1,0 +1,103 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\title{ASSIGNMENT 2}
+\author{Tushita Sharva - CS21BTECH11022}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+    \usepackage{color}                                           
+    \usepackage{array}                                           
+    \usepackage{longtable}                                      
+    \usepackage{calc}                                           
+    \usepackage{multirow}                                        
+    \usepackage{hhline}                                          
+    \usepackage{ifthen}                                        
+    \usepackage{lscape}   
+
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\begin{document}
+
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+\newcommand{\question}{\noindent \textbf{Question: }}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\formulas}{\noindent \textbf{Formulas required:}}
+\newcommand{\answer}{\noindent \textbf{Final Answer:}}
+
+\maketitle
+
+Download python code for this question from:
+
+\begin{lstlisting}
+  https://github.com/TushitaSharva/PRV_2022/tree/main/ASSIGNMENT_2/codes
+\end{lstlisting}
+
+Download Latex code from: 
+\begin{lstlisting}
+    https://github.com/TushitaSharva/PRV_2022/tree/main/ASSIGNMENT_2/latex
+\end{lstlisting}
+\bigskip
+
+\section{Question}
+Evaluate: $$\int \frac{x^3 + 5x^2 + 4x + 1}{x^2}\ dx$$
+\bigskip
+
+\section{Solution}
+
+\bigskip
+
+\formulas
+\begin{enumerate}
+    \item $ \frac{a^m}{a^n} = a^\brak{m-n}$ \\
+    \item $\int x^n\ dx = \frac{x^n+1}{n+1} + c$\\
+    \item $\int \frac{1}{x}\ dx = \log x + c$\\
+\end{enumerate}
+
+\bigskip
+
+The same expression can be re-written as 
+\begin{align}
+    \int \frac{x^3}{x^2} + \frac{5x^2}{x^2} + \frac{4x}{x^2} + \frac{1}{x^2}\ dx
+\end{align}
+Using the first formula, 
+\begin{align}
+    \int x + 5 + \frac{4}{x} + \frac{1}{x^2}\ dx\\
+    \implies \int x + \int 5\brak{x^0} + \int \frac{4}{x} + \int \frac{1}{x^2}\ dx
+\end{align}
+Using fourth formula for the third algebraic term, we get: 
+\begin{align}
+    \int \frac{4}{x}\ dx\ = 4 \int \frac{1}{x}\\
+    \implies 4\log x + c
+\end{align}
+Using third formula for rest of the terms, we get
+\begin{align}
+    \int x\ dx\ = \frac{x^\brak{1+1}}{1+1} + c = \frac{x^2}{2} + c\\
+    \int 5x^0\ dx\ = 5\times \frac{x^ \brak{0+1}}{0+1} + c = 5x+c\\
+    \int \frac{1}{x^2}\ dx\ = \int x^\brac{-2}\ dx\ = \frac{x^\brac{-1}}{-1} + c = \frac{-1}{x} + c  
+\end{align}
+
+\bigskip
+
+Substituting them all in the equation given, we get:
+
+ $$\int \frac{x^3 + 5x^2 + 4x + 1}{x^2}\ dx = \frac{x^2}{2}+ 5x + 4\log x + \frac{-1}{x} + c $$
+
+\bigskip
+
+\answer
+\bigskip
+$$ \frac{x^2}{2}+ 5x + 4\log x + \frac{-1}{x} + c $$
+
+\end{document}
+
+
+
