@@ -1,0 +1,154 @@
+
+\documentclass[journal, 12pt, twocolumn]{IEEEtran}
+
+\title{ASSIGNMENT 3}
+
+\author{Janga Tushita Sharva - CS21BTECH11022}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+ \usepackage{listings}
+    \usepackage{color}                                            
+    \usepackage{array}                                            
+    \usepackage{longtable}                                        
+    \usepackage{calc}                                            
+    \usepackage{multirow}                                         
+    \usepackage{hhline}                                          
+    \usepackage{ifthen}   
+
+\usepackage{multicolrule}
+\columnseprule=0.5pt
+
+   
+%table commands   
+\def\inputGnumericTable{}
+
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}
+\usepackage{caption} 
+\captionsetup[table]{skip=3pt}  
+
+\renewcommand{\thefigure}{\arabic{table}}
+\renewcommand{\thetable}{\arabic{table}}       
+
+
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\newcommand{\graph}{\noindent \textbf{Graph: }}
+\newcommand{\calc}{\noindent \textbf{Calculations: }}
+\numberwithin{equation}{subsection}
+
+\renewcommand{\thetable}{\theenumi}
+
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This assignment contains the solution to the Example 7 from the Chapter STATISTICS, from class 9 CBSE board syllabus.
+\end{abstract}
+
+
+\section{Question}
+
+A teacher wanted to analyse the performance of two sections of students
+in a mathematics test of 100 marks. Looking at their performances, she found that a
+few students got under 20 marks and a few got 70 marks or above. So she decided to
+group them into intervals of varying sizes as follows: 0 - 20, 20 - 30, . . ., 60 - 70,
+70 - 100. Then she formed the following table:
+
+\begin{table}[ht!]
+	\input{questionTable.tex}
+\end{table}
+
+A histogram for this table was prepared by a student.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width = \columnwidth]{questionHistogram.png}
+	\caption{Given histogram}
+	\label{Figure_1}
+	\end{figure}
+
+Carefully examine this graphical representation. Do you think that it correctly represents
+the data?
+
+\section{Solution}
+
+No, the given histogram is incorrect.\\
+The area of the rectangles is proportional to the frequencies in histogram. In this histogram,\\
+
+Area for class 70 - 100:
+\begin{align}
+    8 \times 30 = 240
+\end{align}
+
+Area for class 60 - 70:
+\begin{align}
+    15 \times 10 = 150
+\end{align}
+
+Thus we see that the frequency of students who obtained 60 above marks are less than the frequency of students who obtained 70 above marks, which is wrong. \\
+So, make the following modifications in the lengths of the rectangles so that the areas are again proportional to the frequencies.
+\begin{enumerate}
+    \item Find the minimum class size. Here it is 10. 
+    \item The lengths of the rectangles are then modified to be proportionate to the
+class-size 10.
+\end{enumerate}
+
+Use the following concept:
+\begin{align}
+	\begin{split}
+	    length of rectangle =
+\\
+        \frac{frequency of class}{class size} \times \brac{minimum class size}	\end{split}
+\end{align}
+
+Using it, lengths of rectangles will be the as follows.
+
+\calc
+\begin{align}
+    [0,20] : \frac{7}{20} \times 10 = \frac{7}{2} = 3.5\\
+    [20, 30] : \frac{10}{10} \times 10 = 10\\
+    [30, 40] : \frac{10}{10} \times 10 = 10\\
+    [40, 50] : \frac{20}{10} \times 10 = 20\\ 
+    [50, 60] : \frac{20}{10} \times 10 = 20\\
+    [60, 70] : \frac{15}{10} \times 10 = 15\\
+    [70-100] : \frac{8}{30} \times 10 = \frac{8}{3} = 2.67
+\end{align}
+
+The information when tabulated is as shown below.
+
+
+\begin{table}[ht!]
+    \centering
+	\input{AnswerTable.tex}
+	\caption{The correct analysis of histogram}
+\end{table}
+
+So the correct graph would be as follows.\\
+This graph has been plotted using \texttt{matplotlib, python}.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width = \columnwidth]{pythonGenHistogram.png}
+	\caption{Given histogram}
+	\label{Figure_1}
+	\end{figure}
+
+\end{document}
