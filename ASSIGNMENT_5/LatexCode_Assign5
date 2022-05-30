@@ -176,19 +176,18 @@ This document refers to the Example 10, Chapter 2, from the Papoulis and Pillai 
 
 Download Latex source code of this pdf from: 
 \begin{lstlisting}
-    link
+    https://github.com/TushitaSharva/PRV_2022/blob/main/ASSIGNMENT_5/LatexCode_Assign5
 \end{lstlisting}
 
 Download Presentation of this document at:
 \begin{lstlisting}
-    link
+    https://github.com/TushitaSharva/PRV_2022/blob/main/ASSIGNMENT_5/mainBeamer.pdf
 \end{lstlisting}
 
 To download this document, visit: 
 \begin{lstlisting}
-    link
+    https://github.com/TushitaSharva/PRV_2022/blob/main/ASSIGNMENT_5/mainDoc.pdf
 \end{lstlisting}
-
 
 \section{Question}
 In a fair die experiment, $S$ represents the set consisting of the faces $f_1, f_2, f_3, f_4, f_5, f_6$. Determine the conditional probability of the event \cbrak{f_2}, assuming the event $even$ occurred.
