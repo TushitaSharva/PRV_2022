@@ -11,7 +11,7 @@ x = np.linspace(-4,4,30)#points on the x axis
 simlen = int(1e6) #number of samples
 err = [] #declaring probability list
 #randvar = np.random.normal(0,1,simlen)
-randvar = np.loadtxt('uni.dat',dtype='double')
+randvar = np.loadtxt('custom.dat',dtype='double')
 #randvar = np.loadtxt('gau.dat',dtype='double')
 for i in range(0,30):
 	err_ind = np.nonzero(randvar < x[i]) #checking probability condition
@@ -25,9 +25,9 @@ plt.xlabel('$x$')
 plt.ylabel('$F_X(x)$')
 
 #if using termux
-plt.savefig('custom_cdf.pdf')
-plt.savefig('custom_cdf.eps')
-plt.savefig('custom_cdf.png')
+plt.savefig('../figs/custom_cdf.pdf')
+plt.savefig('../figs/custom_cdf.eps')
+plt.savefig('../figs/custom_cdf.png')
 # subprocess.run(shlex.split("termux-open ../figs/uni_cdf.pdf"))
 #if using termux
 #plt.savefig('../figs/gauss_cdf.pdf')
